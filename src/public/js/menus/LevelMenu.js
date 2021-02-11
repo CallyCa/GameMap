@@ -15,7 +15,7 @@ function LevelMenu(levels) {
             styles: {
                 fnt_def: titleStyle, fnt_hover: titleStyle
             },
-            text: "Camper Survival", callback: function() {
+            text: "Dasher Survival", callback: function() {
 
             }
         }

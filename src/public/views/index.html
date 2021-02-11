@@ -13,7 +13,7 @@
         if(window.location.protocol === 'https:') {
             window.location.href="http:" + window.location.href.substring(window.location.protocol.length);
         }
-    </script>
+        </script>
     
     <!-- Libraries that we didn't make -->
 
@@ -24,6 +24,21 @@
     <script src="../libs/lib-font.js"></script>
     
     <script src="../js/menus/LevelMenu.js"></script>
+
+    <style>
+        @font-face {
+            font-family: GoodDog;
+            src: url("../styles/fonts/GoodDog.ttf");
+        }
+    </style>
+
+    <script>
+        $(function() {
+            $("#header").load("header.html", function() {
+                $(".home").addClass("current");
+            });
+        })
+    </script>
 
 
 </head>

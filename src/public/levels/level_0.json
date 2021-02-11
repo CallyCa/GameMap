@@ -25,7 +25,7 @@
 		}
 	},
 	"Signs": [
-		{ "x": 19, "y": 15, "text": "Welcome to Camper Survival!" },
+		{ "x": 19, "y": 15, "text": "Welcome to Dasher Survival!" },
 		{ "x": 62, "y": 9, "text": "Yay! You made it!" }
 	]
 }
