@@ -51,9 +51,37 @@ function server() {
             if(chatMembers.indexOf(username) > -1){
                 chat.push({username: username, color: hex_color, message: message})
             }
-
         }
+    };
 
-    }
+    // User connect handler
+    this.peer.on('connection', (connection) =>{
+        campers.push(new camper("A_NAME", connection.peer, 200, 200));
+        chat.chatMessage("SERVER", "A_NAME has connected!", "#FF0000");
+        document.addEventListener('camperInit', (e) => {
+        }, false);
+        document.addEventListener('coordUpdate', (e) => {
+        },false);
+        this.peer.on('data', () => {
+            console.log(arguments);
+        });
+    });
+}
+
+const client = function client(peerID) {
+    // Just a client
+
+    this.peer = new Peer({key: '55sj0os1x512a9k9'});
+    this.conn = peer.connect(peerID);
+    this.conn.on('open', () => {
+        this.conn.send('Hello Server!');
+    });
+}
+
+function cliServer() {
+    // normal client hosting itself
+
+    server();
+    client(server.peerID);
 }
 
